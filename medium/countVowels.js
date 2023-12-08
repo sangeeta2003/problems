@@ -4,9 +4,11 @@
 
   Once you've implemented the logic, test your code by running
 */
-
 function countVowels(str) {
-    // Your code here
+  let cleanStr = str.toLowerCase();
+  const count = cleanStr.match(/[aeiou]/g);
+  return count ? count.length : 0;
 }
 
-module.exports = countVowels;
+// Example usage
+console.log(countVowels('SAngeeta')); // Output: 3 (a, e, a are vowels)
