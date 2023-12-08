@@ -16,6 +16,49 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor(){
+    this.result = 0
+  }
+  add(number){
+    this.result += number;
+  }
+  subtract(number){
+    this.result -= number;
+  }
+  multipy(number){
+    this.result *= number;
+
+  }
+  division(number){
+    if(number == 0){
+      throw new console.error('dont divide by zero');
+    }
+    this.result /= number;
+  }
+    
+     clear(){
+      this.result = 0;
+    }
+    getResult(){
+      return this.result;
+    }
+    cal(exp){
+      const modexp = exp.replace(/\s+/g, '');
+if(!/^\d+(\.\d+)?([+\-*/]\d+(\.\d+)?)*$/.test(modexp)){
+  throw new error("please eneter valid number")
+}
+this.result = eval(modexp);
+    }
+
+  }
+  const calculator = new Calculator();
+  calculator.add(10);
+  calculator.subtract(2);
+  calculator.multipy(6);
+  calculator.division(2);
+  calculator.cal(`10+2*6/2`);
+  console.log(calculator.getResult());
+
 
 module.exports = Calculator;
